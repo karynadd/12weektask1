@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tarot Talks</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<style type="text/css">
+		@font-face {font-family: 'Calypso'; src: url('fonts/Calypso.ttf') format('truetype'); font-weight: normal;font-style: normal;}
+		* {margin: 0; padding: 0; box-sizing: border-box;}
+		body {font-family: 'Calypso', serif; color: #f5c944; scroll-behavior: smooth; background: #0F101D}
+		.container {height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background-image: url('back2.png'); background-size: cover; background-position: center; backdrop-filter: blur(2px); padding: 60px 20px; text-align: center; backdrop-filter: blur(2px);}
+		.candle {position: absolute; width: 70px; z-index: 2; animation: float 3s ease-in-out infinite;}
+		.candle1 {top: 120px; left: 1200px; animation-delay: 0s;}
+		.candle2 {top:110px; left: 400px; animation-delay: 0.3s;}
+		.candle3 {top:350px; left: 140px; animation-delay: 0.6s;}
+		.candle4 {top:350px; left: 1400px; animation-delay: 0.9s;}
+		.candle5 {top:600px; left: 400px; animation-delay: 0.2s;}
+		.candle6 {top:600px; left: 1200px; animation-delay: 0.5s;}
+		@keyframes float {0% {transform: translateY(0);} 50% {transform: translateY(-40px);} 100% {transform: translateY(0);}}
+		.container2 {height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px 20px; text-align: center; backdrop-filter: blur(2px);}
+		h1 {font-size: 70px; line-height: 1.2; text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);}
+		h1 {font-size: 70px; line-height: 1.2; text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);}
+		@keyframes fadeInUptext {0% {opacity: 0; transform: translateY(30px);} 100% {opacity: 1; transform: translateY(0);}}
+		.fade-in-text {opacity: 0; animation: fadeInUptext 0.8s forwards;}
+		.fade-in-text.delay-1 {animation-delay: 0.2s;}
+		.fade-in-text.delay-2 {animation-delay: 0.4s;}
+		.h1add {font-size: 90px; line-height: 1.2; text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);}
+		.cta-button {display: inline-block; margin-top: 70px; padding: 12px 32px; background: #f5c944; color: #222;font-size: 20px; text-decoration: none; border-radius: 30px; box-shadow: 0 0 20px 5px rgba(245, 201, 68, 0.5); transition: all 0.3s ease;} 
+		.cta-button:hover {box-shadow: 0 0 30px 10px rgba(245, 201, 68, 0.8); background-color: #ffe066;}
+		.subtitle {font-size: 18px; margin-top: 30px; margin-bottom: 50px;}
+		.cards {display: flex; justify-items: center; gap: 70px; margin-bottom: 40px;}
+		.card1 {width: 246px; height: 420px; object-fit: cover; border: 1px solid #f5c944; box-shadow: 0 40px 50px rgba(245, 201, 68, 0.3); opacity: 0; transform: translateY(30px); animation: fadeInUp 0.6s forwards;}
+		.card2 {width: 246px; height: 420px; object-fit: cover; border: 1px solid #f5c944; box-shadow: 0 40px 50px rgba(245, 201, 68, 0.3); opacity: 0; transform: translateY(30px); animation: fadeInUp 0.6s forwards; animation-delay: 0.4s;}
+		.card3 {width: 246px; height: 420px; object-fit: cover; border: 1px solid #f5c944; box-shadow: 0 40px 50px rgba(245, 201, 68, 0.3); opacity: 0; transform: translateY(30px); animation: fadeInUp 0.6s forwards; animation-delay: 0.8s;}
+		.cardresult {width: 246px; height: 420px; object-fit: cover; border: 1px solid #f5c944; box-shadow: 0 40px 50px rgba(245, 201, 68, 0.3);}
+		@keyframes fadeInUp {to {opacity: 1; transform: translateY(0);}}
+		.cardresult {height:420px; border: 2px; box-shadow: 0 20px 40px rgba(245, 201, 68, 0.2);}
+		.result-content-side {display: flex; gap: 60px; align-items: flex-start; justify-content: center; flex-wrap: wrap; margin-bottom: 40px;}
+		.text-box-group {display: flex; flex-direction: column; gap: 40px; max-width: 650px;}
+		.result-box {position: relative; border: 2px solid #f5c944; border-radius: 30px; padding: 40px 30px 30px; background-color: #1e1e1e; box-shadow: 0 0 40px rgba(245, 201, 68, 0.15); color: #f5c944; font-size: 16px; line-height: 1.6; text-align: left; max-width: 609px; max-height: 420px;}
+		.result-title {position: absolute; top: -22px; left: 30px; background-color: #f5c944; color: #222; padding: 10px 20px; fon-size: 18px; font-family: 'Calypso', serif; border-radius: 30px; box-shadow: 0 3px 8px rgba(245, 201, 68, 0.3); white-space: nowrap; z-index: 2;}
+		.result-body {background-color: #1e1e1e; color: #f5c944; border-bottom-left-radius: 30px;border-bottom-right-radius: 30px; font-size: 16px; line-height: 1.6;}}
+		.result-advice {font-size: 20px; font-weight: 500;}
+
+
+	</style>
+</head>
+<body>
+		<section id="intro" class="container">
+
+			<img src="candle.gif" class="candle candle1">
+			<img src="candle.gif" class="candle candle2">
+			<img src="candle.gif" class="candle candle3">
+			<img src="candle.gif" class="candle candle4">
+			<img src="candle.gif" class="candle candle5">
+			<img src="candle.gif" class="candle candle6">
+  
+			<h1 class="fade-in-text">DO YOU BELIVE</h1>
+			<h1 class="h1add fade-in-text">TAROT?</h1>
+			<a href="#love" class="cta-button">Start Reading →</a>
+		</section>
+
+		<section id="love" class="container2">
+			<h1 class="fade-in-text">LOVE AND RELATIONSHIPS</h1>
+			<p class="subtitle fade-in-text">What do the cards say about your love life?</p>
+
+			<div class="cards">
+				<img src="cardback.png" alt="Tarot Card" class="card1" onclick="showLoveResult()">
+				<img src="cardback.png" alt="Tarot Card" class="card2" onclick="showLoveResult()">
+				<img src="cardback.png" alt="Tarot Card" class="card3" onclick="showLoveResult()">
+			</div>
+
+			<a href="#" class="cta-button" id="drawButton">Draw Tarot →</a>
+		</section>
+
+		<section id="resultSection" class="container2" style="display: none;">
+			<h1 class="fade-in-text">LOVE AND RELATIONSHIPS</h1>
+			<p class="subtitle fade-in-text">Choose one card below</p>
+			<div class="result-content-side">
+			  <img src="QueenOfSwords.png" alt="Queen of Swords" class="cardresult">
+
+			  <div class="text-box-group">
+			    <div class="result-box">
+			      <div class="result-title">Queen of Swords – Love & Relationships</div>
+			      <div class="result-body">
+			        <p>
+			          A time for honesty and clear thinking in love. This card suggests emotional maturity, healthy boundaries, and the courage to see things as they are.
+			        </p>
+			        <p class="result-advice">
+			          <strong>Advice:</strong><br>
+			          Love wisely. Be kind, but don’t ignore red flags.
+			        </p>
+			      </div>
+			    </div>
+
+			    <div class="result-box">
+			      <div class="result-title">검의 여왕 – 사랑과 관계</div>
+			      <div class="result-body">
+			        <p>
+			          사랑에서 정직함과 명확한 사고가 필요한 시기이다. 이 카드는 감정적 성숙, 건강한 경계 설정, 그리고 상황을 있는 그대로 바라보는 용기를 의미한다.
+			        </p>
+			        <p class="result-advice">
+			          <strong>추천:</strong><br>
+			          현명하게 사랑하세요. 친절하되, 경고 신호를 무시하지 마세요.
+			        </p>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<a href="#" class="cta-button" onclick="goBack()">Redraw Tarot →</a>
+		</section>
+
+		<section id="career" class="container2">
+			<h1 class="fade-in-text">CAREER & FINANCES</h1>
+			<p class="subtitle fade-in-text">What do the cards say about your career?</p>
+
+			<div class="cards">
+				<img src="cardback.png" alt="Tarot Card" class="card1" onclick="showCareerResult()">
+				<img src="cardback.png" alt="Tarot Card" class="card2" onclick="showCareerResult()">
+				<img src="cardback.png" alt="Tarot Card" class="card3" onclick="showCareerResult()">
+			</div>
+
+			<a href="#" class="cta-button" id="drawButton">Draw Tarot →</a>
+		</section>
+
+		<section id="careerResult" class="container2" style="display: none;">
+			<h1 class="fade-in-text">Career & Finances</h1>
+			<p class="subtitle fade-in-text">Choose one card below</p>
+			<div class="result-content-side">
+			  <img src="TheMoon.png" alt="The Moon" class="cardresult">
+
+			  <div class="text-box-group">
+			    <div class="result-box">
+			      <div class="result-title">The Moon – Career & Finances</div>
+			      <div class="result-body">
+			        <p>
+			          The Moon indicates uncertainty, confusion, or hidden factors in your work or financial situation. Things may not be as they seem — trust your intuition, and avoid making major decisions until you have more clarity. Be cautious of illusions or misleading offers.
+			        </p>
+			        <p class="result-advice">
+			          <strong>Advice:</strong><br>
+			          Take time to reflect. Don’t rush. Follow your instincts, not just logic.
+			        </p>
+			      </div>
+			    </div>
+
+			    <div class="result-box">
+			      <div class="result-title">달 카드 – 직업 & 재정</div>
+			      <div class="result-body">
+			        <p>
+			          달 카드는 직장이나 재정 상황에서 불확실성이나 혼란, 또는 감춰진 요소들이 있음을 나타낸다. 겉보기와 다른 진실이 있을 수 있으니, 직관을 믿고 섣부른 결정을 피하세요. 허상이나 속이는 제안에 주의가 필요하다.
+			        </p>
+			        <p class="result-advice">
+			          <strong>추천:</strong><br>
+			          서두르지 말고 시간을 갖고 상황을 지켜보세요. 논리뿐만 아니라 직감을 따르는 것이 중요하다.
+			        </p>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<a href="#" class="cta-button" onclick="goBack()">Redraw Tarot →</a>
+		</section>
+
+		<section id="personal" class="container2">
+			<h1 class="fade-in-text">PERSONAL GROWTH</h1>
+			<p class="subtitle fade-in-text">What do the cards say about your personal growth?</p>
+
+			<div class="cards">
+				<img src="cardback.png" alt="Tarot Card" class="card1" onclick="showPersonalResult()">
+				<img src="cardback.png" alt="Tarot Card" class="card2" onclick="showPersonalResult()">
+				<img src="cardback.png" alt="Tarot Card" class="card3" onclick="showPersonalResult()">
+			</div>
+
+			<a href="#" class="cta-button" id="drawButton">Draw Tarot →</a>
+		</section>
+
+		<section id="personalResult" class="container2" style="display: none;">
+			<h1 class="fade-in-text">Personal Growth</h1>
+			<p class="subtitle fade-in-text">Choose one card below</p>
+			<div class="result-content-side">
+			  <img src="TheWorld.png" alt="The World" class="cardresult">
+
+			  <div class="text-box-group">
+			    <div class="result-box">
+			      <div class="result-title">The World – Personal Growth</div>
+			      <div class="result-body">
+			        <p>
+			          TThe World signifies completion, self-awareness, and spiritual fulfillment. You’ve grown through challenges and are now stepping into a more integrated, balanced version of yourself. It’s a reminder that you are enough — celebrate how far you’ve come.
+			        </p>
+			        <p class="result-advice">
+			          <strong>Advice:</strong><br>
+			          Embrace the wholeness within you. Trust that you are exactly where you need to be.
+			        </p>
+			      </div>
+			    </div>
+
+			    <div class="result-box">
+			      <div class="result-title">세계 카드 – 개인 성장</div>
+			      <div class="result-body">
+			        <p>
+			          세계 카드는 완성, 자기 인식, 그리고 영적 충만감을 나타낸다. 당신은 많은 도전을 통해 성장해왔고, 이제 더 균형 잡히고 통합된 자신으로 나아가고 있다. 지금 이 순간, 당신은 충분합니다 — 지금까지의 여정을 기쁘게 받아들이세요.
+			        </p>
+			        <p class="result-advice">
+			          <strong>추천:</strong><br>
+			          자신 안의 완전함을 포용하세요. 지금 당신은 있어야 할 자리에 있다. 
+			        </p>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<a href="#" class="cta-button" onclick="goBack()">Redraw Tarot →</a>
+		</section>
+
+
+</body>
+
+<script>
+ function hideAllSections() {
+  document.getElementById("resultSection").style.display = "none";
+  document.getElementById("careerResult").style.display = "none";
+  document.getElementById("personalResult").style.display = "none";
+  document.getElementById("love").style.display = "none";
+  document.getElementById("career").style.display = "none";
+  document.getElementById("personal").style.display = "none";
+}
+
+function showLoveResult() {
+  hideAllSections();
+  document.getElementById("resultSection").style.display = "block";
+}
+
+function showCareerResult() {
+  hideAllSections();
+  document.getElementById("careerResult").style.display = "block";
+}
+
+function showPersonalResult() {
+  hideAllSections();
+  document.getElementById("personalResult").style.display = "block";
+}
+
+function goBackTo(sectionId) {
+  hideAllSections();
+  document.getElementById(sectionId).style.display = "block";
+}
+
+</script>
+</html>
